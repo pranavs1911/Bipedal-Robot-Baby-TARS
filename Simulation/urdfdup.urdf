@@ -1,0 +1,93 @@
+<?xml version="1.0"?>
+	<robot name="tars">
+		<material name="blue">
+    			<color rgba="0 0 0.8 1"/>
+		</material>
+   		<material name="black">
+   			<color rgba="0 0 0 1"/>
+   		</material>
+  		<material name="white">
+  			<color rgba="1 1 1 1"/>
+     		</material>
+   
+		<link name="base">
+  	     		<visual>
+				<origin xyz = "0 0 0" rpy= "0 0 0" />				
+         			<geometry>
+					<mesh filename="Base.stl" scale="0.001 0.001 0.001"/>
+         			</geometry>
+         			<material name="blue"/>				
+  	     		</visual>
+			<collision>
+				<origin xyz = "0 0 0" rpy = "0 0 0"/>
+				<geometry>
+					<mesh filename="Base.stl" scale="0.001 0.001 0.001"/>
+				</geometry>
+			</collision>
+			<inertial>
+	       			<mass value="1.0131"/>
+       				<inertia ixx="0.0354" ixy="0.0100" ixz="0.008" iyy="0.0219" iyz="0.0163" izz="0.0283"/>
+       			</inertial>
+		</link>
+		<link name="Thigh1">
+			<visual>
+				<origin rpy="0 0 0" xyz="0.00825 0.03935 0.09326"/>
+				<geometry>
+           				<mesh filename="Thigh1.stl" scale="0.001 0.001 0.001"/>
+         			</geometry>
+         			<material name="white"/>
+  	     		</visual>
+			<collision>
+				<origin xyz = "0.00825 0.03935 0.09326" rpy = "0 0 0"/>
+				<geometry>
+					<mesh filename="Thigh1.stl" scale="0.001 0.001 0.001"/>
+				</geometry>
+			</collision>
+			<inertial>
+	       			<mass value="0.0767"/>
+       				<inertia ixx="0.0058" ixy="0.0015" ixz="0.0018" iyy="0.0044" iyz="0.0029" izz="0.0034"/>
+       			</inertial>
+     		</link>
+   
+   		<joint name="JointBT1" type="revolute">
+  	     		<parent link="Base"/>
+  	     		<child link="Thigh1"/>
+			<calibration rising="0.0"/>
+			<dynamics damping="0.0" friction="0.0"/>
+			<limit effort = "1000.0" lower ="-0.38" upper="0" velocity = "0.5">
+  	 		<safety_controller k_velocity="10" k_position="15" soft_lower_limit="-2.0" soft_upper_limit="0.5" />
+			<origin xyz="0 -0.22 0.25" rpy="0 0 3.1416"/>
+			<axis xyz = "-1 0 0">
+     		</joint>
+   
+     		<link name="Thigh2">
+  	     		<visual>
+				<origin rpy="0 0 0" xyz="-0.05102 0.03935 0.09326"/>
+				<geometry>
+           				<mesh filename="Thigh2.stl" scale="0.001 0.001 0.001"/>
+         			</geometry>
+         			<material name="white"/>
+  	     		</visual>
+			
+			<collision>
+				<origin xyz = "-0.05102 0.03935 0.09326" rpy = "0 0 0"/>
+				<geometry>
+					<mesh filename="Thigh2.stl" scale="0.001 0.001 0.001"/>
+				</geometry>
+			</collision>
+			<inertial>
+	       			<mass value="0.0767"/>
+       				<inertia ixx="0.0059" ixy="0.0002" ixz="0.0003" iyy="0.0036" iyz="0.0029" izz="0.0024"/>
+       			</inertial>
+     		</link>
+   		<joint name="JointBT2" type="revolute">
+  	     		<parent link="Base"/>
+  	     		<child link="Thigh2"/>
+			<calibration rising="0.0"/>
+			<dynamics damping="0.0" friction="0.0"/>
+			<limit effort = "1000.0" lower ="-0.38" upper="0" velocity = "0.5">
+  	 		<safety_controller k_velocity="10" k_position="15" soft_lower_limit="-2.0" soft_upper_limit="0.5" />
+			<origin xyz="0 -0.22 0.25" rpy="0 0 3.1416"/>
+			<axis xyz = "-1 0 0">
+     		</joint>
+	</robot>

@@ -1,0 +1,10 @@
+Simulation: Base X = 19.86mm, Y= -121.20mm, Z = 223.56mm Mass: 997.29g
+
+Thigh-1: X= 0.00825m, Y= 0.03935m, Z = 0.09326m Mass: 128.69g
+Thigh2: X = -0.05102m,Y = 0.03935m, Z= 0.09326m Mass: 128.69g
+
+Calf1: X = 0.00842m, Y= 0.06378m, Z = 0.16026m Mass: 152g
+Calf2 X = -0.05102m, Y = 0.06121m , Z = 0.16114m Mass: 152g
+
+Feet1: X = 0.04057m, Y = 0.15469m, Z = 0.22236m Mass: 118.05g
+Feet2: X = -0.08317, Y = 0.13839m, Z = 0.2337m Mass: 118.05g

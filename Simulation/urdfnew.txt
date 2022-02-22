@@ -1,0 +1,213 @@
+<?xml version="1.0"?>
+	<robot name="tars">
+		<material name="blue">
+    			<color rgba="0 0 0.8 1"/>
+		</material>
+   		<material name="black">
+   			<color rgba="0 0 0 1"/>
+   		</material>
+  		<material name="white">
+  			<color rgba="1 1 1 1"/>
+     		</material>
+   
+		<link name="base">
+  	     		<visual>
+				<origin xyz = "0 0 0" rpy= "0 0 0" />				
+         			<geometry>
+					<mesh filename="Base.stl" scale="0.001 0.001 0.001"/>
+         			</geometry>
+         			<material name="blue"/>				
+  	     		</visual>
+			<collision>
+				<origin xyz = "0 0 0" rpy = "0 0 0"/>
+				<geometry>
+					<mesh filename="Base.stl" scale="0.001 0.001 0.001"/>
+				</geometry>
+			</collision>
+			<inertial>
+	       			<mass value="1.0131"/>
+       				<inertia ixx="0.0354" ixy="0.0100" ixz="0.008" iyy="0.0219" iyz="0.0163" izz="0.0283"/>
+       			</inertial>
+		</link>
+		<link name="Thigh1">
+			<visual>
+				<origin rpy="0 0 0" xyz="0.00825 0.03935 0.09326"/>
+				<geometry>
+           				<mesh filename="Thigh1.stl" scale="0.001 0.001 0.001"/>
+         			</geometry>
+         			<material name="white"/>
+  	     		</visual>
+			<collision>
+				<origin xyz = "0.00825 0.03935 0.09326" rpy = "0 0 0"/>
+				<geometry>
+					<mesh filename="Thigh1.stl" scale="0.001 0.001 0.001"/>
+				</geometry>
+			</collision>
+			<inertial>
+	       			<mass value="0.0767"/>
+       				<inertia ixx="0.0058" ixy="0.0015" ixz="0.0018" iyy="0.0044" iyz="0.0029" izz="0.0034"/>
+       			</inertial>
+     		</link>
+   
+   		<joint name="JointBT1" type="revolute">
+  	     		<parent link="Base"/>
+  	     		<child link="Thigh1"/>
+			<calibration rising="0.0"/>
+			<dynamics damping="100.0" friction="100.0"/>
+			<limit effort = "30.0" lower ="-2.2" upper="0.7" velocity = "1.0">
+  	 		<safety_controller k_velocity="10" k_position="15" soft_lower_limit="-2.0" soft_upper_limit="0.5" />
+			<origin xyz="0 -0.22 0.25" rpy="0 0 3.1416"/>
+			<axis xyz = "1 0 0">
+     		</joint>
+   
+     		<link name="Thigh2">
+  	     		<visual>
+				<origin rpy="0 0 0" xyz="-0.05102 0.03935 0.09326"/>
+				<geometry>
+           				<mesh filename="Thigh2.stl" scale="0.001 0.001 0.001"/>
+         			</geometry>
+         			<material name="white"/>
+  	     		</visual>
+			
+			<collision>
+				<origin xyz = "-0.05102 0.03935 0.09326" rpy = "0 0 0"/>
+				<geometry>
+					<mesh filename="Thigh2.stl" scale="0.001 0.001 0.001"/>
+				</geometry>
+			</collision>
+			<inertial>
+	       			<mass value="0.0767"/>
+       				<inertia ixx="0.0059" ixy="0.0002" ixz="0.0003" iyy="0.0036" iyz="0.0029" izz="0.0024"/>
+       			</inertial>
+     		</link>
+   		<joint name="JointBT2" type="revolute">
+  	     		<parent link="Base"/>
+  	     		<child link="Thigh2"/>
+			<calibration rising="0.0"/>
+			<dynamics damping="100.0" friction="100.0"/>
+			<limit effort = "30.0" lower ="-2.2" upper="0.7" velocity = "1.0">
+  	 		<safety_controller k_velocity="10" k_position="15" soft_lower_limit="-2.0" soft_upper_limit="0.5" />
+			<origin xyz="0 -0.22 0.25" rpy="0 0 3.1416"/>
+			<axis xyz = "1 0 0">
+     		</joint>
+     		<link name="Calf1">
+  	     		<visual>
+				<origin rpy="0 0 0" xyz="0 0 -0.3"/>
+				<geometry>
+           				<mesh filename="Calf1.stl" scale="0.001 0.001 0.001"/>
+         			</geometry>
+         			<material name="white"/>
+  	     		</visual>
+			
+			<collision>
+				<origin xyz = "0 0 0" rpy = "0 0 0"/>
+				<geometry>
+					<mesh filename="Calf1.stl" scale="0.001 0.001 0.001"/>
+				</geometry>
+			</collision>
+			<inertial>
+	       			<mass value="0.1008"/>
+       				<inertia ixx="0.0123" ixy="0.0022" ixz="0.0032" iyy="0.0096" iyz="0.0057" izz="0.0053"/>
+       			</inertial>
+  		</link>
+  		<joint name="JointTC1" type="revolute">
+  	 		<parent link="Thigh1"/>
+  	 		<child link="Calf1"/>
+			<calibration rising="0.0"/>
+			<dynamics damping="0.0" friction="0.0"/>
+			<limit effort = "1000.0" lower ="-0.38" upper="0" velocity = "0.5">
+  	 		<safety_controller k_velocity="10" k_position="15" soft_lower_limit="-2.0" soft_upper_limit="0.5" />
+			<origin xyz="0 -0.22 0.25" rpy="0 0 3.1416"/>
+			<axis xyz = "-1 0 0">
+  		</joint>
+		<link name="Calf2">
+  	 		<visual>
+				<origin rpy="0 0 0" xyz="0 0 -0.3"/>
+				<geometry>
+					<mesh filename="Calf2.stl" scale="0.001 0.001 0.001"/>           				
+         			</geometry>
+         			<material name="white"/>
+  	     		</visual>
+			
+			<collision>
+				<origin xyz = "0 0 0" rpy = "0 0 0"/>
+				<geometry>
+					<mesh filename="Calf2.stl" scale="0.001 0.001 0.001"/>
+				</geometry>
+			</collision>
+			<inertial>
+	       			<mass value="0.1008"/>
+       				<inertia ixx="0.0134" ixy="0.0003" ixz="0.0005" iyy="0.0087" iyz="0.0064" izz="0.0047"/>
+       			</inertial>
+  		</link>
+  		<joint name="JointTC2" type="revolute">
+  	 		<parent link="Thigh2"/>
+  	 		<child link="Calf2"/>
+			<calibration rising="0.0"/>
+			<dynamics damping="0.0" friction="0.0"/>
+			<limit effort = "1000.0" lower ="-0.38" upper="0" velocity = "0.5">
+  	 		<safety_controller k_velocity="10" k_position="15" soft_lower_limit="-2.0" soft_upper_limit="0.5" />
+			<origin xyz="0 -0.22 0.25" rpy="0 0 3.1416"/>
+			<axis xyz = "-1 0 0">
+  		</joint>
+  		<link name="Feet1">
+  	 		<visual>
+				<origin rpy="0 1.57075 0" xyz="0 0 -0.3"/>
+				<geometry>
+           				<mesh filename="Feet1.stl" scale="0.001 0.001 0.001"/>
+         			</geometry>
+         			<material name="white"/>
+  	     		</visual>
+			
+			<collision>
+				<origin xyz = "0 0 0" rpy = "0 0 0"/>
+				<geometry>
+					<mesh filename="Feet1.stl" scale="0.001 0.001 0.001"/>
+				</geometry>
+			</collision>
+			<inertial>
+	       			<mass value="10"/>
+       				<inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
+       			</inertial>
+  		</link>
+  		<joint name="JointCF1" type="revolute">
+  	 		<parent link="Calf1"/>
+  	 		<child link="Feet1"/>
+			<calibration rising="0.0"/>
+			<dynamics damping="0.0" friction="0.0"/>
+			<limit effort = "1000.0" lower ="-0.38" upper="0" velocity = "0.5">
+  	 		<safety_controller k_velocity="10" k_position="15" soft_lower_limit="-2.0" soft_upper_limit="0.5" />
+			<origin xyz="0 -0.22 0.25" rpy="0 0 3.1416"/>
+			<axis xyz = "-1 0 0">
+  		</joint>
+		<link name="Feet2">
+  	 		<visual>
+				<origin rpy="0 1.57075 0" xyz="0 0 -0.3"/>
+				<geometry>
+           				<mesh filename="Feet2.stl" scale="0.001 0.001 0.001"/>
+         			</geometry>
+         			<material name="white"/>
+  	     		</visual>
+			
+			<collision>
+				<origin xyz = "0 0 0" rpy = "0 0 0"/>
+				<geometry>
+					<mesh filename="Feet2.stl" scale="0.001 0.001 0.001"/>
+				</geometry>
+			</collision>
+			<inertial>
+	       			<mass value="10"/>
+       				<inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
+       			</inertial>
+  		</link>
+ 		<joint name="JointCF2" type="revolute">
+  	 		<parent link="Calf2"/>
+  	 		<child link="Feet2"/>
+			<calibration rising="0.0"/>
+			<dynamics damping="0.0" friction="0.0"/>
+			<limit effort = "1000.0" lower ="-0.38" upper="0" velocity = "0.5">
+  	 		<safety_controller k_velocity="10" k_position="15" soft_lower_limit="-2.0" soft_upper_limit="0.5" />
+			<origin xyz="0 -0.22 0.25" rpy="0 0 3.1416"/>
+			<axis xyz = "-1 0 0">
+  		</joint>
+	</robot>	

@@ -1,0 +1,448 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-1-g15f4949  Build Version: 1.6.7594.29634
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="tries3">
+  <material name="blue">
+    <color rgba="0 0 0.8 1"/>
+  </material>
+  <material name="white">
+    <color rgba="1 1 1 1"/>
+  </material>
+  <link
+    name="Base">
+    <inertial>
+      <origin
+        xyz="0.069474 -0.12133 0.13993"
+        rpy="0 0 0" />
+      <mass
+        value="0.1" />
+      <inertia
+        ixx="0.0010375"
+        ixy="-2.6567E-05"
+        ixz="-5.308E-06"
+        iyy="0.0026707"
+        iyz="-1.7524E-05"
+        izz="0.001808" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="Base.STL" />
+      </geometry>
+      <material name="">
+	    <color
+          rgba="1 1 1 1" />
+	  </material>	  
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="Base.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="Thigh1">
+    <inertial>
+      <origin
+        xyz="0.02987 -0.0095457 0.038218"
+        rpy="0 0 0" />
+      <mass
+        value="0.07063" />
+      <inertia
+        ixx="1.6093E-05"
+        ixy="1.246E-09"
+        ixz="-3.1315E-09"
+        iyy="3.1061E-05"
+        iyz="1.3962E-06"
+        izz="2.3298E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="Thigh1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="Thigh1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="JointBT1"
+    type="revolute">
+    <origin
+      xyz="0.081014 -0.19531 0.14047"
+      rpy="-0.089 0 0" />
+    <parent
+      link="Base" />
+    <child
+      link="Thigh1" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="-2.2"
+      upper="0.7"
+      effort="30"
+      velocity="1" />
+    <dynamics
+      damping="100"
+      friction="100" />
+    <safety_controller
+      soft_upper="0.5"
+      soft_lower="-2"
+      k_position="15"
+      k_velocity="10" />
+  </joint>
+  <link
+    name="Calf1">
+    <inertial>
+      <origin
+        xyz="0.0291618406610318 0.00128607929559349 0.0602941092380433"
+        rpy="0 0 0" />
+      <mass
+        value="0.0931869407574842" />
+      <inertia
+        ixx="4.49729709529834E-05"
+        ixy="9.21779762223487E-10"
+        ixz="2.18275368275408E-08"
+        iyy="6.94946773983881E-05"
+        iyz="-7.31277960480113E-07"
+        izz="3.50423978846362E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="Calf1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="Calf1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="JointTC1"
+    type="revolute">
+    <origin
+      xyz="0.00055 -0.016403 0.0694"
+      rpy="1.485 0 0" />
+    <parent
+      link="Thigh1" />
+    <child
+      link="Calf1" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="-2.2"
+      upper="0.7"
+      effort="30"
+      velocity="1" />
+    <dynamics
+      damping="100"
+      friction="100" />
+    <safety_controller
+      soft_upper="0.5"
+      soft_lower="-2"
+      k_position="15"
+      k_velocity="10" />
+  </joint>
+  <link
+    name="Feet1">
+    <inertial>
+      <origin
+        xyz="0.029259792920593 0.0141607691897728 0.0251425745609418"
+        rpy="0 0 0" />
+      <mass
+        value="0.109604998401515" />
+      <inertia
+        ixx="4.05843123636312E-05"
+        ixy="-3.4221610679866E-08"
+        ixz="1.16809462796137E-08"
+        iyy="6.61376889670423E-05"
+        iyz="7.79073663473336E-06"
+        izz="7.556628541761E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="Feet1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="Feet1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="JointCF1"
+    type="revolute">
+    <origin
+      xyz="0 0.0022923 0.10757"
+      rpy="0.6123 0 0" />
+    <parent
+      link="Calf1" />
+    <child
+      link="Feet1" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-2.2"
+      upper="0.7"
+      effort="30"
+      velocity="1" />
+    <dynamics
+      damping="100"
+      friction="100" />
+    <safety_controller
+      soft_upper="0.5"
+      soft_lower="-2"
+      k_position="15"
+      k_velocity="10" />
+  </joint>
+  <link
+    name="Thigh2">
+    <inertial>
+      <origin
+        xyz="0.016043 0.012462 0.037369"
+        rpy="0 0 0" />
+      <mass
+        value="0.07063" />
+      <inertia
+        ixx="1.6093E-05"
+        ixy="1.4812E-09"
+        ixz="3.0351E-09"
+        iyy="3.08E-05"
+        iyz="-1.9759E-06"
+        izz="2.3559E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="Thigh2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="Thigh2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="JointBT2"
+    type="revolute">
+    <origin
+      xyz="0 -0.19531 0.14047"
+      rpy="3.17 0 0" />
+    <parent
+      link="Base" />
+    <child
+      link="Thigh2" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="-2.2"
+      upper="0.7"
+      effort="30"
+      velocity="1" />
+    <dynamics
+      damping="100"
+      friction="100" />
+    <safety_controller
+      soft_upper="0.5"
+      soft_lower="-2"
+      k_position="15"
+      k_velocity="10" />
+  </joint>
+  <link
+    name="Calf2">
+    <inertial>
+      <origin
+        xyz="0.0159937960902976 0.0372228510031257 0.0474498959730804"
+        rpy="0 0 0" />
+      <mass
+        value="0.0931869337149723" />
+      <inertia
+        ixx="4.4972965564651E-05"
+        ixy="1.38437781528667E-08"
+        ixz="1.691132067763E-08"
+        iyy="5.63774598559999E-05"
+        iyz="-1.67448846526976E-05"
+        izz="4.81596056228184E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="Calf2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="Calf2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="JointTC2"
+    type="revolute">
+    <origin
+      xyz="0 0.021701 0.06793"
+      rpy="-1.00 0 0" />
+    <parent
+      link="Thigh2" />
+    <child
+      link="Calf2" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="-2.2"
+      upper="0.7"
+      effort="30"
+      velocity="1" />
+    <dynamics
+      damping="100"
+      friction="100" />
+    <safety_controller
+      soft_upper="0.5"
+      soft_lower="-2"
+      k_position="15"
+      k_velocity="10" />
+  </joint>
+  <link
+    name="Feet2">
+    <inertial>
+      <origin
+        xyz="0.0160869342854834 0.0140365822182331 0.0252120418228264"
+        rpy="0 0 0" />
+      <mass
+        value="0.109604241764417" />
+      <inertia
+        ixx="4.05842818042763E-05"
+        ixy="-2.56800386194617E-08"
+        ixz="2.17381723149603E-08"
+        iyy="6.60479466425197E-05"
+        iyz="7.73557824673172E-06"
+        izz="7.56565270484595E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="Feet2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1 " />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="Feet2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="JointCF2"
+    type="revolute">
+    <origin
+      xyz="0 0.06641 0.08466"
+      rpy="-0.172 0 0" />
+    <parent
+      link="Calf2" />
+    <child
+      link="Feet2" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="-2.2"
+      upper="0.7"
+      effort="30"
+      velocity="1" />
+    <dynamics
+      damping="100"
+      friction="100" />
+    <safety_controller
+      soft_upper="0.5"
+      soft_lower="-2"
+      k_position="15"
+      k_velocity="10" />
+  </joint>
+</robot>
