@@ -11,5 +11,6 @@ was utilized to program the robot for simple joint movement.
 
 ## Prototype
 <p align="center">
-  <img width="150" src="https://github.com/pranavs1911/Bipedal-Robot-Baby-TARS-/blob/main/Prototype.jpg?raw=true">
+  <img width="130" src="https://github.com/pranavs1911/Bipedal-Robot-Baby-TARS-/blob/main/Prototype.jpg?raw=true">
+  &nbsp&nbsp&nbsp&nbsp<img width="300" src="https://github.com/pranavs1911/Bipedal-Robot-Baby-TARS-/blob/main/Simulation.gif">
 </p>
