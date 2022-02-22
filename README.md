@@ -10,5 +10,6 @@ Raspberry Pi was utilized as the microcontroller for the bipedal robot. A propor
 was utilized to program the robot for simple joint movement. 
 
 ## Prototype
-<p align="left">
-  <img width="300" src="https://github.com/pranavs1911/TractionNeckBrace/blob/main/x2RPS1PRstract.gif">
+<p align="center">
+  <img width="150" src="https://github.com/pranavs1911/Bipedal-Robot-Baby-TARS-/blob/main/Prototype.jpg?raw=true">
+</p>
