@@ -1,5 +1,5 @@
 # Bipedal-Robot-Baby-TARS
-Python files containing the simulation and the microcontroller code for the bipedal robot. 
+A few python files containing the simulation and the microcontroller code for the bipedal robot. 
 ## Simulation
 Simulation was performed on Pybullet. A simple proportional controller along with the forward kinematics model of the robot was
 utilized for the simulation. 
