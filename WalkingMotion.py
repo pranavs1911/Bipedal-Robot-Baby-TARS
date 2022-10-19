@@ -83,34 +83,29 @@ def run():
 		# The servos can rotate between 0 and 240 degrees,
 		# So we adjust the waves to be in that range
 		value5 = sin(t) * 3.5 + pos5
-		servo5.moveTimeWrite(sin(t) * 3.5 + pos5)
 		servo5.moveTimeWrite(ProportionalControl(servo5.getPhysicalPos(),value5))
 		time.sleep(0.005)
 
 		value3 = sin(t) * 5.7 + pos3
-		servo3.moveTimeWrite(sin(t) * 5.7 + pos3)
 		servo3.moveTimeWrite(ProportionalControl(servo3.getPhysicalPos(),value3))
 		time.sleep(0.005)
 
 		value6 = sin(t) * 4.02 + pos6
-		servo6.moveTimeWrite(sin(t) * 4.02 + pos6)
 		servo6.moveTimeWrite(ProportionalControl(servo6.getPhysicalPos(),value6))
 		time.sleep(0.005)
 
 		value1 = cos(t) * 3.55 + pos1
-		servo1.moveTimeWrite(cos(t) * 3.55 + pos1)
 		servo1.moveTimeWrite(ProportionalControl(servo1.getPhysicalPos(),value1))
 		time.sleep(0.005)
 
 		value4 = -cos(t) * 5.75 + pos4
-		servo4.moveTimeWrite(-cos(t) * 5.75 + pos4)
 		servo4.moveTimeWrite(ProportionalControl(servo4.getPhysicalPos(), value4))
 		time.sleep(0.005)
 
 		value2 = cos(t) * 4.00 + pos2
-		servo2.moveTimeWrite(cos(t) * 4.00 + pos2)
 		servo2.moveTimeWrite(ProportionalControl(servo2.getPhysicalPos(),value2))
 		time.sleep(0.005)
+
 		checkStability(servo1.getPhysicalPos(), servo2.getPhysicalPos(), servo3.getPhysicalPos(), servo4.getPhysicalPos(), servo5.getPhysicalPos(), servo6.getPhysicalPos())
 
 		t += 0.08
